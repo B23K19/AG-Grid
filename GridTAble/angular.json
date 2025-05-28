@@ -98,6 +98,8 @@
               }
             ],
             "styles": [
+              "node_modules/ag-grid-community/styles/ag-grid.css",
+              "node_modules/ag-grid-community/styles/ag-theme-quartz.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -106,5 +108,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "1da31094-66a9-4350-9abb-0fde835661ac"
   }
 }
