@@ -1,0 +1,29 @@
+<div class="navBar">
+
+</div>
+<div class="body">
+  <div class="search_section">
+    <input type="text" placeholder="Search..."
+           (input)="onSearch($event)"
+           class="mb-2 p-2 w-64 border border-grey-300 rounded-md
+                  shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+                  ">
+  </div>
+  <div class="table">
+    <ag-grid-angular class="grid"
+                     style="width:100%"
+                     [rowData]="rowData"
+                     [columnDefs]="columnDefs"
+                     [domLayout]="'autoHeight'"
+                     [animateRows]="true"
+                     [pagination]="false"
+                     [defaultColDef]="defaultColDef">
+
+    </ag-grid-angular>
+  </div>
+  <div class="pagination-controls" style="margin-top: 10px; text-align: center;">
+    <button (click)="onPreviousPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="onNextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+</div>
