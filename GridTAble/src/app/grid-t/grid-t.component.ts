@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './grid-t.component.css'
 })
 export class GridTComponent implements OnInit {
+  totalCars: number = 0;
   rowData: any[] = [];
 
   columnDefs:any[] = [
@@ -50,6 +51,7 @@ export class GridTComponent implements OnInit {
       this.rowData = response.data;
       this.totalPages = response.pagination.totalPages;
       this.currentPage = response.pagination.currentPage;
+      this.totalCars = response.pagination.totalItems;
     });
   }
   onNextPage() {

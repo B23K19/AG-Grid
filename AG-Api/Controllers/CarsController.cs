@@ -27,7 +27,7 @@ namespace AG_Api.Controller{
         var totalItems = await query.CountAsync();
         var totalPages = (int)Math.Ceiling((double)totalItems / limit);
         var data = await query
-            .OrderBy(c => c.Id) // Assuming you want to order by Id, change as needed
+            .OrderBy(c => c.Id) 
             .Skip((page - 1) * limit)
             .Take(limit)
             .ToListAsync();
